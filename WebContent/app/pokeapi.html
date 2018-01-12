@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html data-ng-app="moke">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pokeeeeeeeeee</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<script src="./js/moke/moke.js"></script>
+<script src="./js/moke/Controleur/pokeCtrl.js"></script>
+<script src="./js/moke/Controleur/poke2Ctrl.js"></script>
+<script src="./js/moke/Controleur/pokemonCtrl.js"></script>
+<script src="./js/moke/Service/pokedexId.js"></script>
+<script src="./js/moke/Service/PokemonService.js"></script>
+<script src="./js/moke/Service/searchHistory.js"></script>
+<script src="./js/moke/Directive/pokeAbility.js"></script>
+<script src="./js/moke/Component/pokeDetails.js"></script>
+<style>
+	.class1 {
+		color: red;
+	}
+	.class2 {
+		color: green;
+	}
+</style>
+</head>
+<body class="container">
+	<br>
+	<br> Click me:
+	<input type="checkbox" ng-model="checked">
+	<br /> ngShow:
+	<span ng-show="checked"> Affich&eacute quand la checkbox est
+		coch&eacutee. </span>
+	<br /> ngIf:
+	<span ng-if="checked"> Affich&eacute quand la checkbox est
+		coch&eacutee. </span>
+	<br /> ngHide:
+	<span ng-hide="checked"> Masqu&eacute quand la checkbox est
+		coch&eacutee. </span>
+	<br />
+	<p ng-class="{class1: !checked, class2: checked}">Classe 1</p>
+	<div data-ng-view></div>
+</body>
+</html>

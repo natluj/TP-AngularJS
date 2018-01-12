@@ -1,0 +1,16 @@
+<input type="text" data-ng-model="recherche.name" placeholder="Enter a pokemon's name" >
+
+<table class="table table-striped">
+	<tr>
+		<td>Poke Name</td>
+		<td>Fiche</td>
+	</tr>
+	<tr data-ng-repeat="poke in list | filter:recherche">
+		<td>
+			<span data-ng-bind="poke.name" class="fa fa-snowflake"></span>
+		</td>
+		<td>
+			<a href="#!/poke/{{poke.url.substring(poke.url.substring(0, poke.url.length-1).lastIndexOf('/')+1, poke.url.length-1)}}">...details</a>
+		</td>
+	</tr>
+</table>

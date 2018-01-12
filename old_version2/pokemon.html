@@ -1,0 +1,9 @@
+<a href="#!/poke">Retour vers la liste</a>
+<br>
+<h1>{{poke.name}}</h1>
+Size: <br>
+<span data-ng-show="poke.height<8">Small</span> <br>
+<span data-ng-show="poke.height>8 && poke.height<12">Medium</span> <br>
+<span data-ng-show="poke.height>12">Large</span> <br>
+Abilities: <span poke-ability="poke.abilities.length"></span>
+<pre data-ng-bind="poke | json"></pre>

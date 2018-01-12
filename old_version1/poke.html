@@ -1,0 +1,7 @@
+<input type="text" data-ng-model="recherche.name">
+
+<ul>
+	<li data-ng-repeat="poke in list | filter:recherche"><span
+		data-ng-bind="poke.name"></span>
+		<a href="#!/poke/{{poke.url.substring(poke.url.substring(0, poke.url.length-1).lastIndexOf('/')+1, poke.url.length-1)}}">...details</a></li>
+</ul>

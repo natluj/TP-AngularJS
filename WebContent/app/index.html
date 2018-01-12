@@ -1,0 +1,36 @@
+<!doctype html>
+<html data-ng-app="momo">
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+<script src="./js/momo/momo.js"></script>
+<script src="./js/momo/listCtrl.js"></script>
+<script src="./js/momo/bodyCtrl.js"></script>
+<script src="./js/momo/choixLongueur.js"></script>
+<link rel="stylesheet"
+	href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css
+">
+</head>
+<body data-ng-controller="bodyCtrl" )>
+
+	<div>
+		<label>Name:</label> <input type="text" data-ng-model="yourName"
+			data-ng-model-options="{updateOn: 'blur'}"
+			placeholder="Enter a name here"> <input type="text"
+			data-ng-model="yourName" data-ng-model-options="{debounce: 1000}"
+			placeholder="Enter a name here">
+		<hr>
+		<h1>Hello {{yourName | uppercase}} !</h1>
+	</div>
+
+	<ul data-ng-controller="listCtrl">
+		<li data-ng-repeat="item in list | filter:searchByName | choixLongueur:searchByLength"
+			data-ng-click="gimmeYourName(item.name)">{{item.name}}</li>
+	</ul>
+
+	<input type="text" data-ng-model="searchByName"
+		data-ng-model-options="{debounce: 1000}"
+		placeholder="Enter a name here">
+	<input type="number" data-ng-model="searchByLength">
+</body>
+</html>
